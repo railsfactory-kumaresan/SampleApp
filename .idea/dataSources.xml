@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="DataSourceManagerImpl" format="xml" hash="1290900195">
+    <data-source source="LOCAL" name="Rails App: test" uuid="ef286161-2e76-43b1-807f-25d79fdfb93a">
+      <driver-ref>postgresql</driver-ref>
+      <jdbc-driver>org.postgresql.Driver</jdbc-driver>
+      <jdbc-url>jdbc:postgresql:App_test</jdbc-url>
+      <libraries />
+    </data-source>
+    <data-source source="LOCAL" name="Rails App: production" uuid="9db96304-ef92-49ef-82d6-883ffe5f8ec3">
+      <driver-ref>postgresql</driver-ref>
+      <jdbc-driver>org.postgresql.Driver</jdbc-driver>
+      <jdbc-url>jdbc:postgresql:App_production</jdbc-url>
+      <user-name>App</user-name>
+      <user-password>df96df8fdf97df8adfefdfe4dffcdff1df8ddfebdffadffadff5dfeedfebdffedfebdfe8dfebdff9dfefdff5dffadfebdff9dff9dffddfe5dff8dfeedf8ddff7df8adf8fdf94</user-password>
+      <libraries />
+    </data-source>
+    <data-source source="LOCAL" name="Rails App: development" uuid="c31954bf-b222-480a-8d9c-b962e1cb27eb">
+      <driver-ref>postgresql</driver-ref>
+      <jdbc-driver>org.postgresql.Driver</jdbc-driver>
+      <jdbc-url>jdbc:postgresql://127.0.0.1/inquirly_sample_app</jdbc-url>
+      <user-name>postgres</user-name>
+      <user-password>dfd8dfc5dfc5dfde</user-password>
+      <libraries />
+    </data-source>
+  </component>
+</project>
+

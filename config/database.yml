@@ -1,0 +1,9 @@
+development:
+  adapter: postgresql
+  encoding: utf8
+  reconnect: false
+  host: 127.0.0.1
+  database: inquirly_sample_app
+  pool: 5
+  username: postgres
+  password: root
