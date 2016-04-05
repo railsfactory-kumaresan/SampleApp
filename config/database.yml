@@ -6,4 +6,4 @@ development:
   database: inquirly_sample_app
   pool: 5
   username: postgres
-  password: root
+  password: postgres
