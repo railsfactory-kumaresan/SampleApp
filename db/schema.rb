@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160406063539) do
+ActiveRecord::Schema.define(version: 20160411085136) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -19,13 +19,6 @@ ActiveRecord::Schema.define(version: 20160406063539) do
   create_table "articles", force: true do |t|
     t.string   "title"
     t.text     "text"
-    t.datetime "created_at"
-    t.datetime "updated_at"
-  end
-
-  create_table "books", force: true do |t|
-    t.string   "name"
-    t.integer  "user_id"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
@@ -40,52 +33,28 @@ ActiveRecord::Schema.define(version: 20160406063539) do
 
   add_index "comments", ["article_id"], name: "index_comments_on_article_id", using: :btree
 
-  create_table "details", force: true do |t|
-    t.text     "title"
-    t.string   "first_name"
-    t.string   "last_name"
-    t.datetime "created_at"
-    t.datetime "updated_at"
+  create_table "customers", force: true do |t|
+    t.string   "name"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
-  create_table "infos", force: true do |t|
-    t.string   "name"
+  create_table "order_infos", force: true do |t|
     t.string   "password"
-    t.string   "registration_no"
+    t.string   "order_no"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.string   "order_venue"
   end
 
-  create_table "people", force: true do |t|
-    t.string   "first_name"
-    t.string   "last_name"
-    t.datetime "created_at"
-    t.datetime "updated_at"
+  create_table "orders", force: true do |t|
+    t.integer  "customer_id"
+    t.datetime "order_date"
+    t.datetime "created_at",  null: false
+    t.datetime "updated_at",  null: false
   end
 
-  create_table "person_details", force: true do |t|
-    t.string   "name"
-    t.integer  "password"
-    t.integer  "ragistration_number"
-    t.datetime "created_at"
-    t.datetime "updated_at"
-  end
-
-  create_table "products", force: true do |t|
-    t.string   "name"
-    t.string   "primary_key"
-    t.datetime "created_at"
-    t.datetime "updated_at"
-  end
-
-  create_table "suplier_infos", force: true do |t|
-    t.string   "name"
-    t.string   "password"
-    t.string   "registration_no"
-    t.datetime "created_at"
-    t.datetime "updated_at"
-    t.string   "state"
-  end
+  add_index "orders", ["customer_id"], name: "index_orders_on_customer_id", using: :btree
 
   create_table "supplier_infos", force: true do |t|
     t.string   "name"
@@ -95,8 +64,20 @@ ActiveRecord::Schema.define(version: 20160406063539) do
     t.datetime "updated_at"
   end
 
+  create_table "user_infos", force: true do |t|
+    t.string   "username"
+    t.string   "email"
+    t.string   "encrypted_password"
+    t.string   "salt"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
   create_table "users", force: true do |t|
-    t.text     "title"
+    t.string   "username"
+    t.string   "email"
+    t.string   "encrypted_password"
+    t.string   "salt"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
