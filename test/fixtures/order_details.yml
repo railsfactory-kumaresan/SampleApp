@@ -2,10 +2,10 @@
 
 one:
   name: MyString
-  registration_no: MyString
   password: MyString
+  order_no: MyString
 
 two:
   name: MyString
-  registration_no: MyString
   password: MyString
+  order_no: MyString
