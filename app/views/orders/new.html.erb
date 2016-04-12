@@ -1,0 +1,15 @@
+<p>
+<strong>Order:</strong>
+</p>
+<%= form_for @order do |f| %>
+<div style="padding-top: 10px;padding-left: 17px;" >
+<%= collection_select :order, :customer_id, Customer.all, :id, :name%><br/>
+<div style="padding-top: 10px;">
+<%= f.text_field :order_name %>
+</div></br>
+<%=f.datetime_select :order_date%></br>
+<div style="padding-left:15px;padding-top: 10px;">
+<%= f.submit :Save %>
+</div>
+</div> 
+<% end %>

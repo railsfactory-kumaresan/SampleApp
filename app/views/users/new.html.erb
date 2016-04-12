@@ -1,4 +1,8 @@
+
 <div class="Sign_Form">
+<% if flash[:notice] %>
+<div class="notice" style="text-align: center"><%= flash[:notice] %></div>
+<% end %>
 	<h1> Sign Up</h1>
 	<%= form_for(:user, :url => {:controller => 'users', :action => 'create'}) do |f| %>
 	<p>username<br/><%= f.text_field :username  %></p>
@@ -7,6 +11,7 @@
 	<p>password conforamtion<br/> <%= f.password_field :password_confirmation %></p>
 	<%= f.submit :SignUp %>
 	<% end %>
+
 	<% if @users.errors.any? %>
 	<ul class="Signup_Errors">
 		<% for mesg in @users.errors.full_messages %>

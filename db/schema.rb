@@ -11,10 +11,28 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160411085136) do
+ActiveRecord::Schema.define(version: 20160412084024) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "account_histories", force: true do |t|
+    t.integer  "account_id"
+    t.integer  "credit_rating"
+    t.datetime "created_at",    null: false
+    t.datetime "updated_at",    null: false
+  end
+
+  add_index "account_histories", ["account_id"], name: "index_account_histories_on_account_id", using: :btree
+
+  create_table "accounts", force: true do |t|
+    t.integer  "supplier_id"
+    t.string   "account_number"
+    t.datetime "created_at",     null: false
+    t.datetime "updated_at",     null: false
+  end
+
+  add_index "accounts", ["supplier_id"], name: "index_accounts_on_supplier_id", using: :btree
 
   create_table "articles", force: true do |t|
     t.string   "title"
@@ -52,9 +70,20 @@ ActiveRecord::Schema.define(version: 20160411085136) do
     t.datetime "order_date"
     t.datetime "created_at",  null: false
     t.datetime "updated_at",  null: false
+    t.string   "order_name"
   end
 
   add_index "orders", ["customer_id"], name: "index_orders_on_customer_id", using: :btree
+
+  create_table "product_infos", force: true do |t|
+    t.string   "name"
+    t.decimal  "price"
+    t.integer  "manufacture_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "product_infos", ["manufacture_id"], name: "index_product_infos_on_manufacture_id", using: :btree
 
   create_table "supplier_infos", force: true do |t|
     t.string   "name"
@@ -62,6 +91,12 @@ ActiveRecord::Schema.define(version: 20160411085136) do
     t.string   "registration_no"
     t.datetime "created_at"
     t.datetime "updated_at"
+  end
+
+  create_table "suppliers", force: true do |t|
+    t.string   "name"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
   create_table "user_infos", force: true do |t|

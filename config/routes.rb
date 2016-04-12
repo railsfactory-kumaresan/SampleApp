@@ -1,8 +1,13 @@
 Rails.application.routes.draw do
+  get 'sessions/new'
+
   resources :articles do
     resources:comments
   end
+  resources :customers 
    
+  resources :orders   
+
   get  'signup'  => 'users#new'
   post 'users' => 'users#create' 
   #root 'welcome#index'
