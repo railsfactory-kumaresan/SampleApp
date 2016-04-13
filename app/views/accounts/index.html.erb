@@ -1,0 +1,11 @@
+<div style=""> Accout list for specific customer  
+</div>
+<div >
+<table>
+	<% @accounts.each do |account| %>
+	<tr>
+		<td><%= account.account_number %></td>
+	</tr>
+	<% end %>
+</table>
+</div>

@@ -1,4 +1,4 @@
-class Supplier < ActiveRecord::Base
-  has_one :account
-#   has_one :account_history, through: :account
-end
+class Supplier <ActiveRecord::Base
+  has_one :account
+  validates :name,:presence => {:message => "can't be blank"}
+end	

@@ -8,6 +8,11 @@ Rails.application.routes.draw do
    
   resources :orders   
 
+  resources :suppliers
+  
+  resources :accounts
+
+
   get  'signup'  => 'users#new'
   post 'users' => 'users#create' 
   #root 'welcome#index'
