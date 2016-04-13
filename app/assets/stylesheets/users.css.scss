@@ -1,0 +1,24 @@
+// Place all the styles related to the users controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+.Sign_Form{
+	text-align: center;
+    margin: auto;
+    margin-top: 10px;
+    width: 500px;
+    padding-bottom: 20px;
+    border-radius: 20px;
+    box-shadow: 5px 5px 5px #888888;
+    background-color: rgba(0,0,0,.2)
+}
+
+.Signup_Errors{
+	text-align:left;
+	margin-left:66px;
+	color:red;
+}
+
+notice {
+    text-align: center;
+    padding-top:10px;
+}

@@ -1,8 +1,15 @@
 Rails.application.routes.draw do
+  get 'sessions/new'
+
   resources :articles do
     resources:comments
-  end  
-    
+  end
+  resources :customers 
+   
+  resources :orders   
+
+  get  'signup'  => 'users#new'
+  post 'users' => 'users#create' 
   #root 'welcome#index'
   #get 'welcome' , to :'welcome#index'
   # The priority is based upon order of creation: first created -> highest priority.

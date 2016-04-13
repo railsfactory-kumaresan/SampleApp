@@ -1,0 +1,15 @@
+<div style="text-align: center;border-bottom: 2px solid;padding-top: 10px;padding-bottom:9px;margin-bottom: 10px;"> listing all order 
+</div>
+<div >
+
+<table>
+	
+	<% @orders.each do |order| %>
+	<tr>
+		<td><%= order.order_name %></td>
+		<td><%= order.order_date %></td>
+	</tr>
+	<% end %>
+	
+</table>
+</div>
