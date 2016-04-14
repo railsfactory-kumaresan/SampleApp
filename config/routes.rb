@@ -12,6 +12,19 @@ Rails.application.routes.draw do
   
   resources :accounts
 
+  resources :assemblies do
+    get 'all_parts' 
+  end  
+
+  resources :parts do
+
+    collection do
+      get 'list'
+      post 'create_list'
+      get 'show_list'
+    end
+    get 'all_assembly'
+  end 
 
   get  'signup'  => 'users#new'
   post 'users' => 'users#create' 
