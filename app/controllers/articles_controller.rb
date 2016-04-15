@@ -22,9 +22,9 @@ class ArticlesController < ApplicationController
 			redirect_to @article
 		else
 			#render 'new'
-			render :new
+			#render :new
 			#render :nothing => true, :status => '400'
-			#render html:"<strong> Nto founded </strong >".html_safe
+			render html:"<strong> Not able to  created </strong >".html_safe
 			#render plain:'Ok'
 			#both are same in 2nd we are using symbol instead of string
 			  
@@ -38,13 +38,13 @@ class ArticlesController < ApplicationController
 		if @article.update(article_params)
 			redirect_to @article
 		else
-			rendr 'edit'	
+			render 'edit'	
 		end
 	end
 
 
 	def edit
-		@article = Article.find(params[:id])
+		p @article = Article.find(params[:id])
 	end
 
 

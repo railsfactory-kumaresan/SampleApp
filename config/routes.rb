@@ -24,8 +24,16 @@ Rails.application.routes.draw do
       get 'show_list'
     end
     get 'all_assembly'
-  end 
+  end
 
+  resources  :registerusers
+  
+  resources :books do
+    collection do
+      get 'book_list' 
+    end  
+  end  
+  
   get  'signup'  => 'users#new'
   post 'users' => 'users#create' 
   #root 'welcome#index'
