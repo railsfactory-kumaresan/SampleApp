@@ -1,0 +1,18 @@
+<div style="text-align: center;">
+<%= form_tag (create_list_parts_path) do %>
+	<p style="border-bottom: 2px solid"><strong>Supplier and Order</strong></p>
+	<%#= collection_select  Part.all, :id, :name%>
+	<div style="padding-bottom:20px;">
+		<label> Assembly name:-</label>
+		<%= select_tag "assembly_id", options_for_select(@assemblie.collect{ |assembly| [assembly.name, assembly.id]}),prompt: "---Select assembly number---" %>
+	</div>
+	
+	<label> part number:-</label>
+	<%= select_tag "part_id", options_for_select(@part.collect{ |part| [part.part_number, part.id]}),prompt: "---Select part number---" %></br>
+
+	<div class="btn-submit">
+		<%= submit_tag "Save"%>
+	</div>
+
+<% end %>
+</div>

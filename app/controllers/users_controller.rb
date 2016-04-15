@@ -1,4 +1,5 @@
 class UsersController < ApplicationController
+  
   def new
     @users = User.new 
     puts "#{@users}"
@@ -15,9 +16,11 @@ class UsersController < ApplicationController
   	   flas[:color] = "invalid"
   	end
     render "new"  
-  end 
+  end
+
   private
   def user_params
     params.require(:user).permit(:username, :email, :password, :password_confirmation)
-  end	
+  end
+
 end

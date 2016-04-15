@@ -1,0 +1,17 @@
+<table>
+	<th> assembly id</th>
+	<th> part id</th>
+	<% @all_assembly_parts.each do |a_part| %>
+	<tr>
+		<td >
+		<%= a_part.assembly_id %>
+		<%= link_to 'show', "/assemblies/#{a_part.assembly_id}/all_parts" %>
+		</td>
+		<td >
+		<%= a_part.part_id %>
+		<%= link_to 'show', "/parts/#{a_part.part_id}/all_assembly" %>
+		</td>
+	</tr>
+	<% end %>
+</table>
+

@@ -1,0 +1,14 @@
+<div class="supplier-index"> listing all accounts 
+</div>
+<div >
+
+<table>
+	<% @suppliers.each do |supplier| %>
+	<tr>
+		<td><%= supplier.name %></td>
+		<td ><%= link_to 'show', "/accounts?supplier_id=#{supplier.id}" %></td>
+	</tr>
+	<% end %>
+	
+</table>
+</div>

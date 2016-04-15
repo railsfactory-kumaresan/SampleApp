@@ -8,6 +8,7 @@ class CreateCustomer < ActiveRecord::Migration
     	t.belongs_to :customer, index:true
     	t.datetime :order_date
     	t.timestamps null: false
-    end	
+    end
+    	
   end
 end

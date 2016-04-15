@@ -1,0 +1,11 @@
+<%= form_for @assembly do |f| %>
+
+<div class="supplier-form">
+	<div style=" width: 12%;margin-left: 44%;">
+		<%=f.text_field :name ,class:'text-field',placeholder: 'assembly name' %></br>
+	</div>
+	<div class="btn-submit">
+		<%= f.submit :Save %>
+	</div>
+</div>
+<% end %>
