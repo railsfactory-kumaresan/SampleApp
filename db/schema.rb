@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160413120956) do
+ActiveRecord::Schema.define(version: 20160415103909) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -54,6 +54,17 @@ ActiveRecord::Schema.define(version: 20160413120956) do
 
   add_index "assemblies_parts", ["assembly_id"], name: "index_assemblies_parts_on_assembly_id", using: :btree
   add_index "assemblies_parts", ["part_id"], name: "index_assemblies_parts_on_part_id", using: :btree
+
+  create_table "books", force: true do |t|
+    t.integer  "subjects_id"
+    t.string   "title",       limit: 50
+    t.float    "price"
+    t.text     "description"
+    t.datetime "created_at",             null: false
+    t.datetime "updated_at",             null: false
+  end
+
+  add_index "books", ["subjects_id"], name: "index_books_on_subjects_id", using: :btree
 
   create_table "comments", force: true do |t|
     t.string   "commenter"
@@ -104,6 +115,19 @@ ActiveRecord::Schema.define(version: 20160413120956) do
   end
 
   add_index "product_infos", ["manufacture_id"], name: "index_product_infos_on_manufacture_id", using: :btree
+
+  create_table "register_users", force: true do |t|
+    t.string   "name"
+    t.string   "email"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "subjects", force: true do |t|
+    t.string   "name"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
 
   create_table "supplier_infos", force: true do |t|
     t.string   "name"

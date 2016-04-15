@@ -2,7 +2,7 @@ class OrdersController < ApplicationController
 	
 	def index
     	@orders = Order.where(customer_id: params[:customer_id])
-    end	
+  end	
 
 	
 	def create
